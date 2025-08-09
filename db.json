@@ -90,5 +90,15 @@
       "valor": 15,
       "tipo": 1
     }
+  ],
+  "tipoReceita": [
+    {
+      "id": 0,
+      "nome": "Salario"
+    },
+    {
+      "id": 0,
+      "nome": "Freelancer"
+    }
   ]
 }
