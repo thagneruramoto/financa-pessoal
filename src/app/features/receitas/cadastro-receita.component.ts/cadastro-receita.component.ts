@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ReceitaService } from '../../../core/services/receita.service';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MessageService } from 'primeng/api';
@@ -13,6 +13,7 @@ import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
 import { DominioService } from '../../../core/service/dominio.service';
+import { TipoReceita } from '../../../shared/models/tipo-receita.model';
 
 @Component({
   selector: 'app-receitas',
@@ -21,7 +22,7 @@ import { DominioService } from '../../../core/service/dominio.service';
   styleUrl: './cadastro-receita.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CadastroReceitaComponent {
+export class CadastroReceitaComponent implements OnInit {
 
   private readonly receitaService = inject(ReceitaService);
   private readonly messagesService = inject(MessageService);
@@ -34,12 +35,17 @@ export class CadastroReceitaComponent {
   });
 
   public readonly loading = signal(true);
-  public readonly tipos = toSignal(this.receitaService.getTipoDespesa().pipe(finalize(() => this.loading.set(false))));
+  public readonly tipos = signal<TipoReceita[]>([]);
   public readonly visibleDialog = signal(false);
 
-  public salvarNewTipo(receita: string) : void {
-    this.dominioService.inserirTipoReceita({nome: receita}).subscribe((data) => {
+  public ngOnInit(): void {
+    this.receitaService.getTipoDespesa().pipe(finalize(() => this.loading.set(false))).subscribe(tipos => this.tipos.set(tipos));
+  }
+
+  public salvarNewTipo(receita: string): void {
+    this.dominioService.inserirTipoReceita({ nome: receita }).subscribe((tipoReceita) => {
       this.visibleDialog.set(false);
+      this.tipos.update(current => [...current, tipoReceita]);
     })
   }
 
