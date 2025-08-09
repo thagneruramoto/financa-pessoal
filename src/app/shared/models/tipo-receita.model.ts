@@ -1,4 +1,4 @@
 export interface TipoReceita {
-    id: number,
+    id?: string,
     nome: string
 }

@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Button } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -13,7 +13,8 @@ import { TipoReceita } from '../../../shared/models/tipo-receita.model';
   selector: 'app-dominio',
   imports: [FormsModule, ReactiveFormsModule, Select, InputTextModule, Button,],
   templateUrl: './dominio.component.html',
-  styleUrl: './dominio.component.scss'
+  styleUrl: './dominio.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DominioComponent {
   private readonly fb = inject(FormBuilder);
@@ -39,7 +40,6 @@ export class DominioComponent {
 
   private inserirTipoDespesa(): void {
     const despesa: TipoDespesa = {
-      id: 0,
       nome: this.form.value.descricao!
     }
     this.dominioService.inserirTipoDespesa(despesa).subscribe({
@@ -50,9 +50,13 @@ export class DominioComponent {
   }
 
   private inserirTipoReceita(): void {
+    const nome = this.form.value.descricao;
+    if (!nome) {
+      return;
+    }
+
     const receita: TipoReceita = {
-      id: 0,
-      nome: this.form.value.descricao!
+      nome
     }
     this.dominioService.inserirTipoReceita(receita).subscribe({
       next: () => {
