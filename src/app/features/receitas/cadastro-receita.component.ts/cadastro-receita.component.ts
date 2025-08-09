@@ -11,17 +11,21 @@ import { SelectModule } from 'primeng/select';
 import { MessageModule } from 'primeng/message';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
+import { DialogModule } from 'primeng/dialog';
+import { DominioService } from '../../../core/service/dominio.service';
 
 @Component({
   selector: 'app-receitas',
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, InputTextModule, SelectModule, MessageModule, ButtonModule, InputNumberModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, InputTextModule, SelectModule, MessageModule, ButtonModule, InputNumberModule, DialogModule],
   templateUrl: './cadastro-receita.component.html',
   styleUrl: './cadastro-receita.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CadastroReceitaComponent {
+
   private readonly receitaService = inject(ReceitaService);
   private readonly messagesService = inject(MessageService);
+  private readonly dominioService = inject(DominioService)
 
   public readonly form = inject(FormBuilder).group({
     descricao: ['', Validators.required],
@@ -31,6 +35,13 @@ export class CadastroReceitaComponent {
 
   public readonly loading = signal(true);
   public readonly tipos = toSignal(this.receitaService.getTipoDespesa().pipe(finalize(() => this.loading.set(false))));
+  public readonly visibleDialog = signal(false);
+
+  public salvarNewTipo(receita: string) : void {
+    this.dominioService.inserirTipoReceita({nome: receita}).subscribe((data) => {
+      this.visibleDialog.set(false);
+    })
+  }
 
   public inserir() {
 
@@ -50,5 +61,9 @@ export class CadastroReceitaComponent {
       }
     );
 
+  }
+
+  showDialog() {
+    this.visibleDialog.set(true);
   }
 }
