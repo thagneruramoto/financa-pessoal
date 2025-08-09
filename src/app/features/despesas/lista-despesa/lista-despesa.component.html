@@ -1,0 +1,8 @@
+@if (loading()) {
+<p-progress-spinner />
+}
+<ol>
+  @for (despesa of despesas(); track $index) {
+  <li>{{ despesa.descricao }} - {{ despesa.valor | currency : 'BRL' }}</li>
+  }
+</ol>

@@ -1,0 +1,6 @@
+<div class="container">
+  <button (click)="update()">Atualizar contador do pai</button>
+  <p>Contador do pai: {{ count }}</p>
+  <app-on-push [count]="count" />
+  <app-default [count]="count" />
+</div>

@@ -1,0 +1,94 @@
+{
+  "tipos": [
+    {
+      "id": 1,
+      "nome": "Despesa"
+    },
+    {
+      "id": 2,
+      "nome": "Receita"
+    }
+  ],
+  "tipoDespesa": [
+    {
+      "id": 1,
+      "nome": "Aluguel"
+    },
+    {
+      "id": 2,
+      "nome": "Lazer"
+    },
+    {
+      "id": 3,
+      "nome": "Alimentação"
+    },
+    {
+      "id": 4,
+      "nome": "Transporte"
+    },
+    {
+      "id": 5,
+      "nome": "Saúde"
+    },
+    {
+      "id": 6,
+      "nome": "Educação"
+    }
+  ],
+  "despesas": [
+    {
+      "id": "7fd5",
+      "descricao": "aaaa",
+      "valor": 12,
+      "tipo": "1"
+    },
+    {
+      "id": "fff3",
+      "descricao": "Chocolate",
+      "valor": 14,
+      "tipo": "3"
+    },
+    {
+      "id": "b6a9",
+      "descricao": "Coca cola",
+      "valor": 8,
+      "tipo": 3
+    },
+    {
+      "id": "b8fd",
+      "descricao": "Cacetinho",
+      "valor": 9,
+      "tipo": 3
+    },
+    {
+      "id": "ffa2",
+      "descricao": "coca",
+      "valor": 15,
+      "tipo": 1
+    },
+    {
+      "id": "e9fe",
+      "descricao": "B",
+      "valor": 10,
+      "tipo": 2
+    },
+    {
+      "id": "40ef",
+      "descricao": "Coca cola",
+      "valor": 9,
+      "tipo": 1
+    },
+    {
+      "id": "f692",
+      "descricao": "Sabonete Phoebo",
+      "valor": 8,
+      "tipo": 1
+    },
+    {
+      "id": "b8e5",
+      "descricao": "Mais um",
+      "valor": 15,
+      "tipo": 1
+    }
+  ]
+}

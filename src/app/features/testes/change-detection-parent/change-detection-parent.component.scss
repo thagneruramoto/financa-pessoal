@@ -1,0 +1,33 @@
+@use "@media-queries" as *;
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+
+  @include xl {
+    background-color: violet;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  @include lg {
+    background-color: blue;
+  }  
+  
+  @include md {
+    background-color: red;
+  }
+  
+  
+  @include sm {
+    background-color: aqua;
+  }
+  
+}
+
+button {
+  padding: 20px;
+}

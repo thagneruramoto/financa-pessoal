@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="form-despesa">
+    <h1>Cadastro de Despesa</h1>
+    <form [formGroup]="form" (ngSubmit)="inserir()">
+      <input pInputText formControlName="descricao" type="text" placeholder="Descrição" />
+      @if (form.controls.descricao.hasError('required') && form.controls.descricao.touched) {
+      <p-message severity="error" variant="simple" size="small">Informe a descrição da despesa</p-message>
+      }
+      <p-inputnumber mode="currency" inputId="currency-germany" currency="BRL" locale="pt-BR" formControlName="valor" placeholder="Valor" />
+      <p-select formControlName="tipo" optionLabel="nome" optionValue="id" [options]="tipos()" [loading]="loading()" placeholder="Tipo"></p-select>
+      <p-button label="Inserir" type="submit" [disabled]="form.invalid" />
+    </form>
+  </div>
+  <app-lista-despesa />
+</div>

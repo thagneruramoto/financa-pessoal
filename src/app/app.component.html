@@ -1,0 +1,21 @@
+<p-toast />
+<p-drawer [(visible)]="drawerAberto" header="Drawer">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+    ut aliquip ex ea commodo consequat.
+  </p>
+</p-drawer>
+<div>
+  <p-toolbar>
+    <ng-template #start>
+      <p-button label="Abrir" (onClick)="drawerAberto.set(!drawerAberto())" rounded></p-button>
+    </ng-template>
+    <ng-template #center>
+      <h1>Finanças Pessoais</h1>
+    </ng-template>
+    <ng-template #end>
+      <h5>Thagner Moreira Uramoto</h5>
+    </ng-template>
+  </p-toolbar>
+  <router-outlet></router-outlet>
+</div>
