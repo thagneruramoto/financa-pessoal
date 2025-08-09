@@ -93,12 +93,16 @@
   ],
   "tipoReceita": [
     {
-      "id": 0,
-      "nome": "Salario"
-    },
+      "id": "1454",
+      "nome": "13º Salário "
+    }
+  ],
+  "receitas": [
     {
-      "id": 0,
-      "nome": "Freelancer"
+      "id": "e2e6",
+      "descricao": "1/2 13º salário ",
+      "valor": 1500,
+      "tipo": "1454"
     }
   ]
 }

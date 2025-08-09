@@ -1,6 +1,6 @@
 <p-toast />
 <p-drawer [(visible)]="drawerAberto" header="Finança Pessoal">
-  <p-menu [model]="menu" (onItemClick)="drawerAberto.set(false)" />
+  <app-menu [menu]="menu" (onItemClick)="fecharDrawer()" />
 </p-drawer>
 <div>
   <p-toolbar>
