@@ -1,5 +1,5 @@
 {
-  "tipos": [
+  "dominios": [
     {
       "id": 1,
       "nome": "Despesa"

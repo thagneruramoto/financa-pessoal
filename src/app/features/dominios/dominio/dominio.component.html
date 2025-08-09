@@ -1,0 +1,8 @@
+<div class="container">
+  <h1>Cadastro de Dominios</h1>
+  <form [formGroup]="form" (ngSubmit)="inserir()">
+    <p-select formControlName="tipo" optionLabel="nome" optionValue="id" placeholder="Tipo" [options]="tipos()" />
+    <input pInputText formControlName="descricao" type="text" placeholder="Descrição" />
+    <p-button label="Inserir" type="submit" [disabled]="form.invalid" />
+  </form>
+</div>

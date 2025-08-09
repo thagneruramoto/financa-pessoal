@@ -6,7 +6,10 @@
     "FinancaPessoal": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
+        "@schematics/angular:*": {
+          "skipTests": true
+        },
+        "@schematics/angular:comonent": {
           "style": "scss",
           "skipTests": true,
           "changeDetection": "OnPush"

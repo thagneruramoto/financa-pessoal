@@ -8,7 +8,7 @@ import { Toast } from "primeng/toast";
   templateUrl: './change-detection-parent.component.html',
   styleUrl: './change-detection-parent.component.scss',
   standalone: true,
-  imports: [OnPushComponent, DefaultComponent, Toast],
+  imports: [OnPushComponent, DefaultComponent],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ParentComponent {

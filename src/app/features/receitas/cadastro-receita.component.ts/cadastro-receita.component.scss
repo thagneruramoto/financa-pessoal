@@ -1,0 +1,17 @@
+.container {
+  width: 100vw;
+  display: flex;
+  gap: 2rem;
+}
+
+.form-receita {
+  flex: 1;
+  max-width: 500px;
+}
+
+form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
