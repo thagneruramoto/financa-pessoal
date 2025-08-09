@@ -1,4 +1,4 @@
 export interface TipoDespesa {
-    id: number,
+    id?: number,
     nome: string
 }
