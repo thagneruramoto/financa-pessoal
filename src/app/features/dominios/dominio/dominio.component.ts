@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators 
 import { Button } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { Select } from 'primeng/select';
-import { DominioService } from '../../../core/service/dominio.service';
+import { DominioService } from '../../../core/services/dominio.service';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { finalize } from 'rxjs';
 import { TipoDespesa } from '../../../shared/models/tipo-despesa.model';

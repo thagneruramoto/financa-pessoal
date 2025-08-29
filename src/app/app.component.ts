@@ -5,7 +5,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { Button } from "primeng/button";
 import { RouterModule } from '@angular/router';
 import { MenuModule } from 'primeng/menu';
-import { MenuService } from './core/service/menu.service';
+import { MenuService } from './core/services/menu.service';
 import { MenuComponent } from './core/components/menu/menu.component';
 
 @Component({

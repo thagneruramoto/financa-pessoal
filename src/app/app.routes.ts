@@ -5,6 +5,7 @@ import { QuandroKanbanComponent } from './features/testes/quandro-kanban/quandro
 import { ListaDespesaComponent } from './features/despesas/lista-despesa/lista-despesa.component';
 import { CadastroReceitaComponent } from './features/receitas/cadastro-receita.component.ts/cadastro-receita.component';
 import { DominioComponent } from './features/dominios/dominio/dominio.component';
+import { ContasAPagarComponent } from './features/contas-a-pagar/contas-a-pagar.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,9 @@ export const routes: Routes = [
     },
     {
         path: 'cadastro-receita', component: CadastroReceitaComponent
+    },
+    {
+        path: 'contas-a-pagar', component: ContasAPagarComponent
     },
     {
         path: 'dominios', component: DominioComponent

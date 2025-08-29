@@ -1,37 +1,37 @@
 {
   "dominios": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Despesa"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Receita"
     }
   ],
   "tipoDespesa": [
     {
-      "id": 1,
+      "id": "1",
       "nome": "Aluguel"
     },
     {
-      "id": 2,
+      "id": "2",
       "nome": "Lazer"
     },
     {
-      "id": 3,
+      "id": "3",
       "nome": "Alimentação"
     },
     {
-      "id": 4,
+      "id": "4",
       "nome": "Transporte"
     },
     {
-      "id": 5,
+      "id": "5",
       "nome": "Saúde"
     },
     {
-      "id": 6,
+      "id": "6",
       "nome": "Educação"
     }
   ],
@@ -103,6 +103,36 @@
       "descricao": "1/2 13º salário ",
       "valor": 1500,
       "tipo": "1454"
+    }
+  ],
+  "contas-a-pagar": [
+    {
+      "id": "569f",
+      "descricao": "Teste",
+      "valor": 140,
+      "dataVencimento": "2025-08-13T03:00:00.000Z",
+      "status": "pendente"
+    },
+    {
+      "id": "4210",
+      "descricao": "Conta de Luz",
+      "valor": 220,
+      "dataVencimento": "2025-09-09T03:00:00.000Z",
+      "status": "pendente"
+    },
+    {
+      "id": "84ba",
+      "descricao": "Conta de água",
+      "valor": 100,
+      "dataVencimento": "2025-09-02T03:00:00.000Z",
+      "status": "pendente"
+    },
+    {
+      "id": "5586",
+      "descricao": "Internet",
+      "valor": 153,
+      "dataVencimento": "2025-08-26T03:00:00.000Z",
+      "status": "pendente"
     }
   ]
 }

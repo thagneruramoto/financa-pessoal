@@ -36,6 +36,14 @@ export class MenuService {
         }
       ]
     },
+    {
+      label: 'Contas a Pagar', items: [
+        {
+          label: 'Gerenciar',
+          routerLink: ['/contas-a-pagar']
+        }
+      ]
+    }
   ]);
 
   public readonly menu = this.menus.asReadonly();

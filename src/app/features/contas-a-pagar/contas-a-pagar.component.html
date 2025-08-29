@@ -1,0 +1,14 @@
+<h1>Gestão de Contas a Pagar</h1>
+<div>
+  <p-button label="Adicionar Conta" (onClick)="addContaAPagar.set(true)"></p-button>
+  <app-kanban [colunas]="colunasContasAPagar" (movido)="onTrocaDeStatus($event)" />
+</div>
+
+<p-dialog header="Adicionar conta a pagar" [modal]="true" [(visible)]="addContaAPagar" [style]="{ width: '25rem' }">
+  <form [formGroup]="form" (ngSubmit)="inserirContaAPagar()">
+    <input pInputText formControlName="descricao" type="text" placeholder="Descrição" />
+    <p-inputnumber mode="currency" inputId="currency-germany" currency="BRL" locale="pt-BR" formControlName="valor" placeholder="Valor" />
+    <p-datepicker formControlName="dataVencimento" appendTo="body" dateFormat="dd/mm/yy" />
+    <p-button label="Inserir" type="submit" [disabled]="form.invalid" />
+  </form>
+</p-dialog>

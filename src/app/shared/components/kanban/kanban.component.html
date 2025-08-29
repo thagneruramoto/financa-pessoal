@@ -1,22 +1,14 @@
 <div class="kanban-board">
-  <div
-    class="kanban-column"
-    *ngFor="let coluna of colunas()"
-    pDroppable
-    (onDrop)="onDrop(coluna)"
-  >
+  <div class="kanban-column" *ngFor="let coluna of colunas()" pDroppable (onDrop)="onDrop(coluna)">
     <div class="kanban-column-header">{{ coluna.titulo }}</div>
     <ul class="kanban-list">
-      <li
-        *ngFor="let item of coluna.itens"
-        class="kanban-card"
-        pDraggable
-        (onDragStart)="dragStart(item, coluna.id)"
-        (onDragEnd)="dragEnd()"
-      >
+      <li *ngFor="let item of coluna.itens" class="kanban-card" pDraggable (onDragStart)="dragStart(item, coluna.id)" (onDragEnd)="dragEnd()">
         <p-card>
           <ng-template pTemplate="header">{{ item.titulo }}</ng-template>
         </p-card>
+        @if (coluna.onExcluirItem) {
+        <button (click)="coluna.onExcluirItem(item)">Excluir</button>
+        }
       </li>
     </ul>
   </div>

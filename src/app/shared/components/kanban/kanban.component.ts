@@ -1,9 +1,10 @@
-import { Component, Input, Output, EventEmitter, signal, input } from '@angular/core';
+import { Component, Input, Output, EventEmitter, signal, input, output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardModule } from 'primeng/card';
 import { DragDropModule } from 'primeng/dragdrop';
 import { ColunaKanban } from '../../models/coluna-kanban.model';
 import { ItemKanban } from '../../models/coluna-item.model';
+import { ColunaTransicao } from '../../models/coluna-transicao.model';
 
 @Component({
   selector: 'app-kanban',
@@ -14,12 +15,8 @@ import { ItemKanban } from '../../models/coluna-item.model';
 })
 export class KanbanComponent {
   colunas = input.required<ColunaKanban[]>();
-  @Input() desabilitado = false;
-  @Output() movido = new EventEmitter<{
-    item: ItemKanban;
-    de: string;
-    para: string;
-  }>();
+  desabilitado = input(false);
+  movido = output<ColunaTransicao>();
 
   draggedItem: ItemKanban | undefined | null;
 
@@ -42,8 +39,8 @@ export class KanbanComponent {
     const toColumn = targetColumn;
 
     if (fromColumn && toColumn) {
-      fromColumn.itens = fromColumn.itens.filter(i => i.id !== this.draggedItem!.id);
       toColumn.itens.unshift(this.draggedItem!);
+      fromColumn.itens = fromColumn.itens.filter(i => i.id !== this.draggedItem!.id);
       this.movido.emit({ item: this.draggedItem!, de: this.fromColumnId, para: targetColumn.id });
     }
 

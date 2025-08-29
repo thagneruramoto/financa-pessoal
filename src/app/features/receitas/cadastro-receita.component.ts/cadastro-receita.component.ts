@@ -12,7 +12,7 @@ import { MessageModule } from 'primeng/message';
 import { ButtonModule } from 'primeng/button';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { DialogModule } from 'primeng/dialog';
-import { DominioService } from '../../../core/service/dominio.service';
+import { DominioService } from '../../../core/services/dominio.service';
 import { TipoReceita } from '../../../shared/models/tipo-receita.model';
 
 @Component({
