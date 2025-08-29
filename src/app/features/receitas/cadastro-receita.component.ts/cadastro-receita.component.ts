@@ -46,6 +46,11 @@ export class CadastroReceitaComponent implements OnInit {
     this.dominioService.inserirTipoReceita({ nome: receita }).subscribe((tipoReceita) => {
       this.visibleDialog.set(false);
       this.tipos.update(current => [...current, tipoReceita]);
+      this.messagesService.add({
+        severity: 'success',
+        summary: 'Sucesso!',
+        detail: 'Tipo de receita inserida com sucesso'
+      })
     })
   }
 
