@@ -51,9 +51,7 @@ export class ContasAPagarComponent implements OnInit {
     this.contasAPagarService.listar().subscribe((contas) => {
       this.contasAPagar.set(contas);
       console.log('map', this.contasAPagar().map(conta => ({ id: conta.id, titulo: conta.descricao })));
-
     });
-
   }
 
   public form = this.fb.group({
